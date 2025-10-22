@@ -19,14 +19,7 @@ const LoginManager = () => {
   return (
     <div className="login-page-wrapper">
       <div className="login-content-grid">
-        <div className="login-character-section">
-          <div className="login-character-display">
-            <img
-            src="/images/student.png"
-            ></img>
-          </div>
-        </div>
-
+        {/* Khung đăng nhập đặt trước để nằm bên trái */}
         <div className="login-form-card">
           <h1 className="login-form-title">Đăng nhập</h1>
           
@@ -37,7 +30,7 @@ const LoginManager = () => {
                 <input
                   type="text"
                   className="login-text-input"
-                  placeholder="CMND/CCCD"
+                  placeholder="Tên đăng nhập"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -73,24 +66,35 @@ const LoginManager = () => {
               Đăng nhập
             </button>
 
-<div>
-            <div className="login-forgot-section">
-              <a href="#" className="login-forgot-link">
-                Quên mật khẩu?
-              </a>
+            <div>
+              <div className="login-forgot-section">
+                <a href="#" className="login-forgot-link">
+                  Quên mật khẩu?
+                </a>
+              </div>
+              <div className="login-switch-section">
+                <p>Bạn là Sinh viên?{' '}
+                  <span 
+                    className="login-switch-link"
+                    onClick={() => window.location.href = '/studentlogin'}
+                  >
+                    Đăng nhập tại đây
+                  </span>
+                </p>
+              </div>
             </div>
-            <div className="login-switch-section">
-  <p>Bạn là Ban quản lý?{' '}
-    <span 
-      className="login-switch-link"
-      onClick={() => window.location.href = '/managerlogin'}
-    >
-      Đăng nhập tại đây
-    </span>
-  </p>
-  </div>
-</div>
 
+          </div>
+        </div>
+
+        {/* Ảnh quản lý đặt sau để hiển thị bên phải */}
+        <div className="login-character-section">
+          <div className="login-character-display">
+            <img
+              src="/images/manager.png"
+              alt="Manager"
+              className="login-character-image"
+            />
           </div>
         </div>
       </div>
