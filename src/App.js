@@ -18,6 +18,9 @@ import NotifyPage from "./pages/NotifyPage";
 import KTXPage from "./pages/KTXPage";
 import RegisterPage from "./pages/RegisterPage";
 import RegisterCardPage from "./pages/RegisterCardPage";
+// import PaymentPage from "./pages/PaymentPage";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage";
+// import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   console.log("App rendered");
@@ -41,6 +44,7 @@ function App() {
         <Route path="/ktx" element={<KTXPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/register-card" element={<RegisterCardPage />} />
+        <Route path="/payment-success" element={<PaymentSuccessPage />} />
       </Routes>
     </Layout>
   );

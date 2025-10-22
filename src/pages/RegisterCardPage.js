@@ -7,6 +7,7 @@ import calendarIcon from "../assets/calendar-solid.svg";
 import motorcycleIcon from "../assets/motorcycle-2.svg";
 import { FaMotorcycle, FaParking, FaFileInvoiceDollar, FaCheckCircle } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
+import { createPayOSOrder } from '../services/payOS';
 // import { createPaymentLink } from '../utils/payos';
 
 const RegisterCardPage = () => {
@@ -53,12 +54,29 @@ const RegisterCardPage = () => {
   const nextStep = () => setStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (step === 4) {
-      console.log("Form submitted:", formData);
-      // Handle form submission
-      // navigate('/dashboard');
+      // Chuẩn bị thông tin order
+    const packageObj = packages.find(p => p.id === formData.packageId);
+    const vehicleObj = vehicles.find(v => v.id === formData.vehicleId)
+    // Chuyển price từ "50,000đ" thành số 50000
+    const amount = Number((packageObj?.price || '0').replace(/[^\d]/g, ''));
+    const description = `${packageObj?.name || ''}`;
+
+    try {
+        const { data } = await createPayOSOrder({
+          amount,
+          description
+        });
+        if (data && data.payUrl) {
+          window.location.href = data.payUrl; // Redirect sang PayOS
+        } else {
+          alert("Không lấy được link thanh toán từ server.");
+        }
+      } catch (err) {
+        alert("Có lỗi khi tạo đơn thanh toán.");
+      }
     } else {
       nextStep();
     }
