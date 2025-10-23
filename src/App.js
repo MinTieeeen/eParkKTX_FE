@@ -21,7 +21,7 @@ import RegisterCardPage from "./pages/RegisterCardPage";
 // import PaymentPage from "./pages/PaymentPage";
 import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 // import PaymentPage from "./pages/PaymentPage";
-
+import BanQuanLi from "./pages/BanQuanLi";
 function App() {
   console.log("App rendered");
   return (
@@ -45,6 +45,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/register-card" element={<RegisterCardPage />} />
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
+
+        <Route path="/banquanli" element={<BanQuanLi />} />
       </Routes>
     </Layout>
   );
