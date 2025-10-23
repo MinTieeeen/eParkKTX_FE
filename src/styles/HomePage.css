@@ -68,7 +68,7 @@
   gap: 16px;
 }
 
-.btn {
+.homepage-btn {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   padding: 14px 32px;
   font-size: 16px;
@@ -79,24 +79,24 @@
   transition: all 0.3s ease;
 }
 
-.btn-primary {
+.homepage-btn-primary {
   background: #1e1e4e;
   color: white;
 }
 
-.btn-primary:hover {
+.homepage-btn-primary:hover {
   background: #2a2a6a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(30, 30, 78, 0.3);
 }
 
-.btn-secondary {
+.homepage-btn-secondary {
   background: white;
   color: #1e1e4e;
   border: 2px solid #e0e0e8;
 }
 
-.btn-secondary:hover {
+.homepage-btn-secondary:hover {
   border-color: #1e1e4e;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

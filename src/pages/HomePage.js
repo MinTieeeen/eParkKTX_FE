@@ -15,7 +15,7 @@ export default function HomePage() {
     navigate('/login');
   };
 
-  // 👉 Khi bấm "Liên hệ"
+  
   const handleContact = () => {
     alert('Liên hệ: support@manifest.vn\nSố điện thoại: 1900-xxxx');
   };
@@ -42,13 +42,13 @@ export default function HomePage() {
             <div className="buttons">
               <button
                 onClick={handleStart}
-                className="btn btn-primary"
+                className="homepage-btn homepage-btn-primary"
               >
                 Bắt đầu
               </button>
               <button
                 onClick={handleContact}
-                className="btn btn-secondary"
+                className="homepage-btn homepage-btn-secondary"
               >
                 Liên hệ
               </button>
@@ -71,7 +71,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 🆕 Service Section - PHẦN MỚI THÊM */}
       <section className="service-section">
         <div className="service-container">
           <div className="service-left">
@@ -144,7 +143,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 🆕 About Section - PHẦN MỚI THÊM */}
       <section className="about-section">
         <div className="about-container">
           <span className="badge">VỀ CHÚNG TÔI</span>
