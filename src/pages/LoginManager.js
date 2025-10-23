@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, User, Lock } from 'lucide-react';
 import '../styles/LoginManager.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginManager = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     console.log('Login attempt:', { username, password });
+     navigate('/banquanli');
+    
     // Add your login logic here
   };
 

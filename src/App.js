@@ -45,7 +45,6 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/register-card" element={<RegisterCardPage />} />
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
-
         <Route path="/banquanli" element={<BanQuanLi />} />
       </Routes>
     </Layout>
