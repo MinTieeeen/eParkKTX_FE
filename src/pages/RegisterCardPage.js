@@ -8,6 +8,7 @@ import motorcycleIcon from "../assets/motorcycle-2.svg";
 import { FaMotorcycle, FaParking, FaFileInvoiceDollar, FaCheckCircle } from "react-icons/fa";
 import { FaCalendarAlt } from "react-icons/fa";
 import { createPayOSOrder } from '../services/payOS';
+import '../styles/RegisterCardPage.css';
 // import { createPaymentLink } from '../utils/payos';
 
 const RegisterCardPage = () => {
@@ -242,19 +243,19 @@ const RegisterCardPage = () => {
               </div>
             </div> */}
 
-            <div className="terms-checkbox">
+            {/* <div className="terms-student-checkbox">
               <input
                 type="checkbox"
-                id="terms"
+                id="terms-student"
                 name="termsAccepted"
                 checked={formData.termsAccepted}
                 onChange={handleChange}
                 required
               />
-              <label htmlFor="terms">
+              <label htmlFor="terms-student">
                 Tôi đồng ý với <a href="/terms">Điều khoản dịch vụ</a> và <a href="/privacy">Chính sách bảo mật</a>
               </label>
-            </div>
+            </div> */}
           </div>
         );
       default:
@@ -285,7 +286,7 @@ const RegisterCardPage = () => {
                 {stepNum === 4 && 'Xác nhận'}
               </div>
             </div>
-            {stepNum < 4 && <div className={`step-connector ${step > stepNum ? 'active' : ''}`}></div>}
+            {stepNum < 4 && <div className={`step-student-connector ${step > stepNum ? 'active' : ''}`}></div>}
           </React.Fragment>
         ))}
       </div>

@@ -7,6 +7,7 @@ import bikeIcon from "../assets/xe-dap.jpg";
 import ebikeIcon from "../assets/xe-dap-dien.png";
 import emotorbikeIcon from "../assets/xe-may-dien.jpg";
 import motorbikeIcon from "../assets/xe-may.png";
+import '../styles/RegisterPage.css';
 
 const RegisterPage = () => {
   const [step, setStep] = useState(1);
@@ -72,7 +73,7 @@ const RegisterPage = () => {
           <div className="step-number">1</div>
           <div className="step-text">Chọn loại xe</div>
         </div>
-        <div className="step-connector"></div>
+        <div className="step-student-connector"></div>
         <div className={`step ${step >= 2 ? 'active' : ''}`}>
           <div className="step-number">2</div>
           <div className="step-text">Nhập thông tin</div>

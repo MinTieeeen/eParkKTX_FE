@@ -87,12 +87,12 @@
 }
 
 .step.active .step-text {
-  color: #1476d8;
+  /* color: #f5f5f5; */
   font-weight: 500;
 }
 
-.step-connector {
-  height: 3px;
+.step-student-connector {
+  height: 2px;
   background: #e0e0e0;
   flex: 1;
   margin: 0 -10px;
@@ -100,7 +100,7 @@
   top: -12px;
 }
 
-.step-connector.active {
+.step-student-connector.active {
   background: #1476d8;
 }
 
@@ -376,23 +376,23 @@
 }
 
 /* Terms checkbox */
-.terms-checkbox {
+.terms-student-checkbox {
   display: flex;
   align-items: center;
   margin: 20px 0;
   font-size: 14px;
 }
 
-.terms-checkbox input[type="checkbox"] {
+.terms-student-checkbox input[type="checkbox"] {
   margin-right: 10px;
 }
 
-.terms-checkbox a {
+.terms-student-checkbox a {
   color: #1476d8;
   text-decoration: none;
 }
 
-.terms-checkbox a:hover {
+.terms-student-checkbox a:hover {
   text-decoration: underline;
 }
 
