@@ -46,7 +46,7 @@
   position: relative;
 }
 
-.step {
+.register-step {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,18 +75,18 @@
   text-align: center;
 }
 
-.step.active .step-number {
+.register-step.register-step-active .step-number {
   background: white;
   border-color: #1476d8;
   color: #1476d8;
 }
 
-.step.active .step-text {
+.register-step.register-step-active .step-text {
   color: #1476d8;
   font-weight: 500;
 }
 
-.step-connector {
+.register-step-connector {
   height: 2px;
   background: #e0e0e0;
   flex: 1;
@@ -94,7 +94,7 @@
   margin: 0 10px;
 }
 
-.step-connector.active {
+.register-step-connector.register-step-connector-active {
   background: #1476d8;
 }
 
@@ -139,7 +139,7 @@
   background: #f5f9ff;
 }
 
-.vehicle-option.selected {
+.vehicle-option.register-vehicle-selected {
   border-color: #1476d8;
   background: #e3f2fd;
 }
@@ -246,16 +246,16 @@ textarea:focus {
 }
 
 /* Buttons */
-.form-actions {
+.register-form-actions {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-top: 40px;
 }
 
-.next-btn,
-.back-btn,
-.submit-btn {
+.register-next-btn,
+.register-back-btn,
+.register-submit-btn {
   padding: 12px 24px;
   border: none;
   border-radius: 6px;
@@ -268,32 +268,32 @@ textarea:focus {
   transition: all 0.2s;
 }
 
-.next-btn,
-.submit-btn {
+.register-next-btn,
+.register-submit-btn {
   background: #1476d8;
   color: white;
 }
 
-.next-btn:hover,
-.submit-btn:hover {
+.register-next-btn:hover,
+.register-submit-btn:hover {
   background: #0d5aa7;
 }
 
-.next-btn:disabled {
+.register-next-btn:disabled {
   background: #90caf9;
   cursor: not-allowed;
 }
 
-.back-btn {
+.register-back-btn {
   background: #f8f9fa;
   color: #666;
 }
 
-.back-btn:hover {
+.register-back-btn:hover {
   background: #e9ecef;
 }
 
-.submit-btn img {
+.register-submit-btn img {
   width: 20px;
   height: 20px;
   filter: brightness(0) invert(1);
@@ -310,18 +310,18 @@ textarea:focus {
     gap: 0;
   }
   
-  .form-actions {
+  .register-form-actions {
     flex-direction: column;
   }
   
-  .next-btn,
-  .back-btn,
-  .submit-btn {
+  .register-next-btn,
+  .register-back-btn,
+  .register-submit-btn {
     width: 100%;
     justify-content: center;
   }
   
-  .step-connector {
+  .register-step-connector {
     max-width: 50px;
   }
 }

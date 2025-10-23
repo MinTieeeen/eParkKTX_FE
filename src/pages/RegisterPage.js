@@ -69,12 +69,12 @@ const RegisterPage = () => {
 
       {/* Progress Steps */}
       <div className="progress-steps">
-        <div className={`step ${step >= 1 ? 'active' : ''}`}>
+        <div className={`register-step ${step >= 1 ? 'register-step-active' : ''}`}>
           <div className="step-number">1</div>
           <div className="step-text">Chọn loại xe</div>
         </div>
-        <div className="step-student-connector"></div>
-        <div className={`step ${step >= 2 ? 'active' : ''}`}>
+        <div className="register-step-connector"></div>
+        <div className={`register-step ${step >= 2 ? 'register-step-active' : ''}`}>
           <div className="step-number">2</div>
           <div className="step-text">Nhập thông tin</div>
         </div>
@@ -89,7 +89,7 @@ const RegisterPage = () => {
                 <div
                   key={vehicle.id}
                   className={`vehicle-option ${
-                    formData.vehicleType === vehicle.id ? "selected" : ""
+                    formData.vehicleType === vehicle.id ? "register-vehicle-selected" : ""
                   }`}
                   onClick={() => setFormData({...formData, vehicleType: vehicle.id})}
                 >
@@ -98,10 +98,10 @@ const RegisterPage = () => {
                 </div>
               ))}
             </div>
-            <div className="form-actions">
+            <div className="register-form-actions">
               <button
                 type="button"
-                className="next-btn"
+                className="register-next-btn"
                 onClick={handleNext}
                 disabled={!formData.vehicleType}
               >
@@ -169,11 +169,11 @@ const RegisterPage = () => {
               </div>
             </div>
 
-            <div className="form-actions">
-              <button type="button" className="back-btn" onClick={handleBack}>
+            <div className="register-form-actions">
+              <button type="button" className="register-back-btn" onClick={handleBack}>
                 Quay lại
               </button>
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="register-submit-btn">
                 <img src={saveIcon} alt="Lưu" />
                 Lưu thông tin
               </button>

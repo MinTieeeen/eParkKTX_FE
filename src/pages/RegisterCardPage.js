@@ -89,30 +89,30 @@ const RegisterCardPage = () => {
         return (
           <div className="step-content">
             <h2>Chọn xe đăng ký</h2>
-            <div className="options-grid">
+            <div className="register-card-options-grid">
               {vehicles.map(vehicle => (
                 <div 
                   key={vehicle.id} 
-                  className={`option-card ${formData.vehicleId === vehicle.id ? 'selected' : ''}`}
+                  className={`register-card-option-card ${formData.vehicleId === vehicle.id ? 'register-card-option-selected' : ''}`}
                   onClick={() => setFormData({...formData, vehicleId: vehicle.id})}
                 >
-                  <div className="option-icon">
+                  <div className="register-card-option-icon">
                     <img src={motorcycleIcon}></img>
                   </div>
-                  <div className="option-details">
+                  <div className="register-card-option-details">
                     <h4>{vehicle.type}</h4>
                     <p>{vehicle.licensePlate}</p>
                   </div>
                 </div>
               ))}
               <div 
-                className="option-card add-new"
+                className="register-card-option-card add-new"
                 onClick={() => navigate('/register')}
               >
-                <div className="option-icon">
+                <div className="register-card-option-icon">
                   <span>+</span>
                 </div>
-                <div className="option-details">
+                <div className="register-card-option-details">
                   <h4>Thêm xe mới</h4>
                 </div>
               </div>
@@ -123,20 +123,20 @@ const RegisterCardPage = () => {
         return (
           <div className="step-content">
             <h2>Chọn bãi đỗ xe</h2>
-            <div className="options-list">
+            <div className="register-card-option-list">
               {parkingLots.map((lot) => (
         <div 
           key={lot.id} 
-          className={`option-card parking-lot ${formData.parkingLotId === lot.id ? 'selected' : ''} ${lot.isFull ? 'full' : ''}`}
+          className={`register-card-option-card parking-lot ${formData.parkingLotId === lot.id ? 'register-card-option-selected' : ''} ${lot.isFull ? 'register-card-parking-full' : ''}`}
           onClick={() => !lot.isFull && setFormData({...formData, parkingLotId: lot.id})}
         >
-          <div className="option-icon">
+          <div className="register-card-option-icon">
             <FaParking size={24} />
           </div>
-          <div className="option-details">
+          <div className="register-card-option-details">
             <div className="lot-header">
               <h4>{lot.name}</h4>
-              <span className={`slot-status ${lot.isFull ? 'full' : 'available'}`}>
+              <span className={`slot-status ${lot.isFull ? 'register-card-slot-full' : 'register-card-slot-available'}`}>
                 {lot.isFull ? 'Hết chỗ' : `${lot.available}/${lot.capacity} chỗ trống`}
               </span>
             </div>
@@ -159,7 +159,7 @@ const RegisterCardPage = () => {
               {packages.map(pkg => (
                 <div 
                   key={pkg.id} 
-                  className={`package-card ${formData.packageId === pkg.id ? 'selected' : ''}`}
+                  className={`package-card ${formData.packageId === pkg.id ? 'register-card-package-selected' : ''}`}
                   onClick={() => setFormData({...formData, packageId: pkg.id})}
                 >
                   <div className="package-header">
@@ -243,7 +243,7 @@ const RegisterCardPage = () => {
               </div>
             </div> */}
 
-            {/* <div className="terms-student-checkbox">
+            <div className="terms-student-checkbox">
               <input
                 type="checkbox"
                 id="terms-student"
@@ -255,7 +255,7 @@ const RegisterCardPage = () => {
               <label htmlFor="terms-student">
                 Tôi đồng ý với <a href="/terms">Điều khoản dịch vụ</a> và <a href="/privacy">Chính sách bảo mật</a>
               </label>
-            </div> */}
+            </div>
           </div>
         );
       default:
@@ -277,7 +277,7 @@ const RegisterCardPage = () => {
       <div className="progress-steps">
         {[1, 2, 3, 4].map((stepNum) => (
           <React.Fragment key={stepNum}>
-            <div className={`step ${step >= stepNum ? 'active' : ''}`}>
+            <div className={`register-card-step ${step >= stepNum ? 'register-card-step-active' : ''}`}>
               <div className="step-number">{stepNum}</div>
               <div className="step-text">
                 {stepNum === 1 && 'Chọn xe'}
@@ -286,7 +286,7 @@ const RegisterCardPage = () => {
                 {stepNum === 4 && 'Xác nhận'}
               </div>
             </div>
-            {stepNum < 4 && <div className={`step-student-connector ${step > stepNum ? 'active' : ''}`}></div>}
+            {stepNum < 4 && <div className={`register-card-step-connector ${step > stepNum ? 'register-card-step-connector-active' : ''}`}></div>}
           </React.Fragment>
         ))}
       </div>
@@ -294,11 +294,11 @@ const RegisterCardPage = () => {
       <form onSubmit={handleSubmit} className="registration-form">
         {renderStep()}
         
-        <div className="form-actions">
+        <div className="register-card-form-actions">
           {step < 4 ? (
             <button
               type="button"
-              className="next-btn"
+              className="register-card-next-btn"
               onClick={handleSubmit}
               disabled={
                 (step === 1 && !formData.vehicleId) ||
@@ -311,7 +311,7 @@ const RegisterCardPage = () => {
           ) : (
             <button
               type="submit"
-              className="submit-btn"
+              className="register-card-submit-btn"
               disabled={!formData.termsAccepted}
             >
               <img src={saveIcon} alt="Thanh toán" />
